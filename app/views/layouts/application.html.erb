@@ -13,12 +13,12 @@
   </head>
 
   <body>
-    <% if !current_user %>
-      <%= link_to 'Login', '#login-form', id: 'login-link'%>
-      <%= render partial: 'sessions/new'%>
-    <% else %>
+    <% if current_user %>
       <%= current_user.username %>
       <%= link_to 'Logout', logout_path %>
+    <% else %>
+      <%= link_to 'Login', '#login-form', id: 'login-link'%>
+      <%= render partial: 'sessions/new'%>
     <% end %>
     <%= yield %>
 
