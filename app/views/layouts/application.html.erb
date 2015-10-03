@@ -13,8 +13,13 @@
   </head>
 
   <body>
-    <!-- add check for user-->
-    <%= render partial: 'sessions/new'%>
+    <% if !current_user %>
+      <%= link_to 'Login', '#login-form', id: 'login-link'%>
+      <%= render partial: 'sessions/new'%>
+    <% else %>
+      <%= current_user.username %>
+      <%= link_to 'Logout', logout_path %>
+    <% end %>
     <%= yield %>
 
   </body>
