@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(version: 20151004003457) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.text     "body",       null: false
-    t.integer  "user_id",    null: false
-    t.integer  "post_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",       null: false
+    t.text     "body",        null: false
+    t.integer  "user_id",     null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "slug"
   end
 

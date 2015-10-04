@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  belongs_to :catagory
+  belongs_to :category
   validates :title, :body, presence: true  
 
   extend FriendlyId
