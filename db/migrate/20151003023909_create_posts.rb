@@ -5,7 +5,6 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body, null: false
       t.string :category, null: false
       t.references :user, null: false
-      t.references :category, null: false
 
       t.timestamps null: false
     end
