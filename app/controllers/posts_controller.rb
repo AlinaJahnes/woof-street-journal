@@ -32,6 +32,6 @@ class PostsController < ApplicationControllor
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :category_id).merge(user_id: session[:user_id])
+    params.require(:post).permit(:title, :body, :category).merge(user_id: session[:user_id])
   end
 end

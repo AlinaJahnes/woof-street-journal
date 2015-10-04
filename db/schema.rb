@@ -16,12 +16,6 @@ ActiveRecord::Schema.define(version: 20151004003457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "catagories", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -38,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151004003457) do
   create_table "posts", force: :cascade do |t|
     t.string   "title",       null: false
     t.text     "body",        null: false
+    t.string   "category",    null: false
     t.integer  "user_id",     null: false
     t.integer  "category_id", null: false
     t.datetime "created_at",  null: false
