@@ -10,3 +10,7 @@
     <%= link_to post.title, post_path(post)%>
   <% end %>
 <% end %>
+
+<% if current_user %>
+  <%= link_to "New post", new_post_path %>
+<% end %>

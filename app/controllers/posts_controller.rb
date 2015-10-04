@@ -1,17 +1,19 @@
-class PostsController < ApplicationControllor
+class PostsController < ApplicationController
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.find_by_id(params[:id])
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to @post
+    else
+      render :new, flash.now[:error] = "Fail to save new post. Please try again."
+    end
   end
 
   def show
     @post = Post.find(params[:id])
-    if request.path != post_path(@post)
-      redirect_to @post, status: :moved_permanently
-    end
   end
 
   def edit

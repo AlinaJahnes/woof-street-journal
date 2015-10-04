@@ -1,0 +1,25 @@
+
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="website-name">
+      <h1><%= link_to "The Woof Street Journal", root_path %></h1>
+    </li>
+  </ul>
+
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <% if current_user %>
+        <li class="active"><%= link_to "#{current_user.username}", user_path(current_user) %></li>  
+        <li><%= link_to "Logout", logout_path %></li>
+      <% else %>
+        <li><%= link_to 'Login', '#login-form', id: 'login-link'%></li>
+        <%= render partial: 'sessions/new'%>
+      <% end %>       
+    </ul>
+
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul>
+  </section>
+</nav>
