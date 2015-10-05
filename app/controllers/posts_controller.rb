@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+
+  def index
+    @posts = Post.where(category: params[:category])  
+  end
+
   def new
     @post = Post.new
   end

@@ -1,8 +1,7 @@
-
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
-    <li class="website-name">
-      <h1><%= link_to "The Woof Street Journal", root_path %></h1>
+    <li class="name">
+      <h1 id="website-name"><%= link_to "The Woof Street Journal", root_path %></h1>
     </li>
   </ul>
 
@@ -19,7 +18,11 @@
     </ul>
 
     <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
+      <li><%= link_to "LIFE", category_path('life') %></li>
+      <li><%= link_to "DISCOVER", category_path('discover') %></li>
+      <li><%= link_to "HUMOR", category_path('humor') %></li>
+      <li><%= link_to "TRAVEL", category_path('travel') %></li>
+      <li><%= link_to "GOOD", category_path('good') %></li>
     </ul>
   </section>
 </nav>

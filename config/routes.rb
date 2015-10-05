@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'welcome#index'
   resources :users, except: [:index, :new, :destroy]
-  resources :posts
+  resources :posts, except: [:index]
 
-  get 'signup' => 'users#new'
-  post 'login' => 'sessions#create'
-  get 'logout' => 'sessions#destroy'
+  get '/signup' => 'users#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  get '/:category' => 'posts#index', as: :category
   
 
   # Example of regular route:
