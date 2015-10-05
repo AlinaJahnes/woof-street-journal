@@ -12,7 +12,7 @@
         <li class="active"><%= link_to "#{current_user.username}", user_path(current_user) %></li>  
         <li><%= link_to "Logout", logout_path %></li>
       <% else %>
-        <li><%= link_to 'Login', '#login-form', id: 'login-link'%></li>
+        <li><a href="#myModal" data-reveal-id="myModal">Login</a></li>
         <%= render partial: 'sessions/new'%>
       <% end %>       
     </ul>
