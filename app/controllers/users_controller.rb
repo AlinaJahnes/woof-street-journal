@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by_id(params[:id])
-    user.assign_attributes(avatar: params[:user][:avatar])
+    user.assign_attributes(name: params[:user][:name],avatar: params[:user][:avatar])
     if user.save
       flash[:notice] = "Your profile has been updated!"
       redirect_to user_path(user)
