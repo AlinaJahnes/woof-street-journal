@@ -14,3 +14,5 @@
 <% if current_user %>
   <%= link_to "New post", new_post_path %>
 <% end %>
+
+<%= image_tag @user.avatar.url(:thumb) %>
