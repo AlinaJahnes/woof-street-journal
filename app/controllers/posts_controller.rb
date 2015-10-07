@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.where(category: params[:category])  
+    @category = params[:category]
+    @posts = Post.where(category: @category)  
   end
 
   def new

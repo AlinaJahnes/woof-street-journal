@@ -1,6 +1,10 @@
-<p><%= @post.category%></p>
+<div class="row">
+  <div class="large-9 columns main-container">
+  <p class="categories"><%= @post.category%></p>
 
-<h3><%= @post.title %></h3>
-<p><%= link_to @post.user.name, user_path(@post.user)%></p>
+  <h3><%= @post.title %></h3>
+  <p><%= link_to @post.user.name, user_path(@post.user)%></p>
 
-<p><%= @post.body%></p>
+  <p><%= @post.body%></p>
+  </div>
+</div>
