@@ -1,17 +1,20 @@
 <div class="row">
   <% if @category == 'life' %>
-    <div id="life" class="large-12 small-12 columns banner"><img src="assets/life_doodle.png" class="doodles"> Life</div>
+    <div id="life" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/life_doodle.png" class="doodles"> Life</div>
   <% elsif @category == 'discover'%>
-    <div id="discover" class="large-12 small-12 columns banner"><img src="assets/discover.png" class="doodles"> DISCOVER</div>
+    <div id="discover" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/discover.png" class="doodles"> DISCOVER</div>
   <% elsif @category == 'humor'%>
-    <div id="humor" class="large-12 small-12 columns banner"><img src="assets/humor.png" class="doodles"> HUMOR</div>
+    <div id="humor" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/humor.png" class="doodles"> HUMOR</div>
     <% elsif @category == 'travel'%>
-    <div id="travel" class="large-12 small-12 columns banner"><img src="assets/travel.png" class="doodles"> TRAVEL</div>
+    <div id="travel" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/travel.png" class="doodles"> TRAVEL</div>
   <% elsif @category == 'good'%>
-    <div id="good" class="large-12 small-12 columns banner"><img src="assets/good.png" class="doodles"> GOOD</div>
+    <div id="good" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/good.png" class="doodles"> GOOD</div>
   <% end %>
 </div>
 
-<% @posts.each do |post|%>
-  <%= link_to post.title, post_path(post)%>
-<% end %>
+<div class="row">
+  <% @posts.each do |post|%>
+    <div class="large-8 large-offset-1 columns"><%= link_to post.title, post_path(post)%></div>
+    <div class="large-3 columns"></div>
+  <% end %>
+</div>
