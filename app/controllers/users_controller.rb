@@ -24,11 +24,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by_id(current_user.id)
-    @user.update_attributes(user_params)  
-    if @user.save
+    user = User.find_by_id(current_user.id)
+    user.update_attributes(user_params)  
+    if user.save
       flash[:notice] = "Your profile has been updated!"
-      redirect_to @user
+      redirect_to user
     else
       flash[:errors] = user.errors.full_messages
       render :edit
