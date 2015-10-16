@@ -14,10 +14,11 @@
 
 <div class="row">
   <% @posts.each do |post|%>
-    <div class="large-7 large-offset-1 columns">
+    <div class="large-7 large-offset-1 small-12 columns">
       <%= link_to post.title, post_path(post)%></div>
     <div class="large-3 columns left">
       <img src="assets/nexgard-ad.jpg" class="ads">
     </div>
+    <div class="large-1"></div>
   <% end %>
 </div>

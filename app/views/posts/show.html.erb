@@ -5,6 +5,6 @@
   <h3><%= @post.title %></h3>
   <p><%= link_to @post.user.name, user_path(@post.user)%></p>
 
-  <p><%= @post.body%></p>
+  <p><%= markdown(@post.body) %></p>
   </div>
 </div>
