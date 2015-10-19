@@ -2,7 +2,7 @@
   <div><%= f.label :title %>
   <%= f.text_field :title %></div>
   <div><%= f.label :body %>
-  <%= f.cktext_area :body, rows: 10, cols: 80 %></div>
+  <%= f.cktext_area :body, rows: 10, cols: 80, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %></div>
   <div> <%= f.select :category, options_for_select(["life", "discover","humor", "travel", "good"]), prompt: "Category"%></div>
   <%= f.submit %>
 <% end %>
