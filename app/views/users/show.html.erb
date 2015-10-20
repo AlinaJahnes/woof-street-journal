@@ -1,26 +1,26 @@
 <div class="row">
-  <div class="large-8 large-offset-1 columns main-container">
-    <div class ="large-12 columns text-center"><%= image_tag @user.avatar.url(:thumb), id: "author-img" %></div>
-    <div class ="large-12 columns text-center"><%= @user.name%></div>
+  <div class="large-12 large-offset-1 small-16 small-offset-1 columns main-container">
+    <div class ="large-18 columns text-center"><%= image_tag @user.avatar.url(:thumb), id: "author-img" %></div>
+    <div class ="large-18 columns text-center"><%= @user.name%></div>
 
     <% if current_user && current_user.posts.empty? %>
       <p>You haven't created any post.</p>
     <% elsif current_user && current_user.posts %>
       <% current_user.posts.each do |post|%>
-        <div class="large-12 columns">
+        <div class="large-18 columns">
         <h3 class="text-center posts"><%= link_to post.title, post_path(post)%></h3>
         <p class="text-center"><%= link_to "Edit", edit_post_path(post)%> <%= link_to "Delete", post, method: :delete %></p>
         </div>
       <% end %>
     <% else %>
       <% @user.posts.each do |post|%>
-          <div class="large-12 columns text-center">
+          <div class="large-18 columns text-center">
             <%= link_to post.title, post_path(post)%>
           </div>
       <% end %>
     <% end %>
     </div>
-    <div class="large-3 columns"></div>
+    <div class="large-4 columns"></div>
   </div>
 
 <% if current_user %>

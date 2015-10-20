@@ -1,6 +1,7 @@
 .banner {
   text-align: center;
   margin-top: 2%;
+  margin-left: 0;
   font-family: "Helvetica Neue";
   font-size: 2em;
   color: #FFFFFF;
@@ -40,4 +41,16 @@
   margin-top: 3%;
   padding-top: 2%;
   border-top: 1px solid black;
+}
+
+.ads {
+  padding-left: 22px;
+}
+
+.post-container {
+  border: 1px solid black;
+}
+
+#form-category {
+  width: 15%;
 }
