@@ -1,10 +1,12 @@
 <div class="row">
-  <div class="large-9 columns main-container">
-  <p class="categories"><%= @post.category%></p>
+  <div class="large-12 large-offset-1 small-16 small-offset-1 columns main-container">
+    <p class="categories"><%= @post.category%></p>
 
-  <h3><%= @post.title.html_safe %></h3>
-  <p><%= link_to @post.user.name, user_path(@post.user)%></p>
+    <h3><%= @post.title.html_safe %></h3>
+    <p><%= link_to @post.user.name, user_path(@post.user)%></p>
 
-  <p><%= @post.body.html_safe%></p>
+    <p><%= @post.body.html_safe%></p>
   </div>
+  <div class="large-4 columns"></div>
+  <div class="large-1 columns"></div>
 </div>

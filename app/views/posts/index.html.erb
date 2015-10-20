@@ -1,23 +1,27 @@
 <div class="row">
   <% if @category == 'life' %>
-    <div id="life" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/life_doodle.png" class="doodles"> Life</div>
+    <div id="life" class="large-16 large-offset-1 small-16 small-offset-1 columns banner"><img src="assets/life_doodle.png" class="doodles"> Life</div>
   <% elsif @category == 'discover'%>
-    <div id="discover" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/discover.png" class="doodles"> DISCOVER</div>
+    <div id="discover" class="large-16 large-offset-1 small-16 small-offset-1 columns banner"><img src="assets/discover.png" class="doodles"> DISCOVER</div>
   <% elsif @category == 'humor'%>
-    <div id="humor" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/humor.png" class="doodles"> HUMOR</div>
+    <div id="humor" class="large-16 large-offset-1 small-16 small-offset-1 columns banner"><img src="assets/humor.png" class="doodles"> HUMOR</div>
     <% elsif @category == 'travel'%>
-    <div id="travel" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/travel.png" class="doodles"> TRAVEL</div>
+    <div id="travel" class="large-16 large-offset-1 small-16 small-offset-1 columns banner"><img src="assets/travel.png" class="doodles"> TRAVEL</div>
   <% elsif @category == 'good'%>
-    <div id="good" class="large-10 large-offset-1 small-12 columns banner"><img src="assets/good.png" class="doodles"> GOOD</div>
+    <div id="good" class="large-16 large-offset-1 small-16 small-offset-1 columns banner"><img src="assets/good.png" class="doodles"> GOOD</div>
   <% end %>
 </div>
 
 <div class="row">
-  <% @posts.each do |post|%>
-    <div class="large-7 large-offset-1 columns">
-      <%= link_to post.title, post_path(post)%></div>
-    <div class="large-3 columns left">
-      <img src="assets/nexgard-ad.jpg" class="ads">
-    </div>
-  <% end %>
+  <div class="large-12 large-offset-1 small-16 small-offset-1 columns ">
+      <% @posts.each do |post|%>
+       <div class="row">
+          <div class="large-18 small-18 columns post-container"><%= link_to post.title, post_path(post)%></div>
+        </div>
+      <% end %>
+  </div>
+  <div class="large-4 columns">
+    <img src="assets/nexgard-ad.jpg" class="ads">
+  </div>
+  <div class="large-1 columns"></div>
 </div>
