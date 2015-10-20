@@ -14,7 +14,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      render :new, flash.now[:errors] = "Fail to save new post. Please try again."
+      flash.now[:errors] = @post.errors.full_messages
+      render :new
     end
   end
 
