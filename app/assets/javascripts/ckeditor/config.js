@@ -8,4 +8,6 @@ CKEDITOR.editorConfig = function (config) {
   config.toolbar = "mini";
   config.filebrowserImageBrowseUrl = '/ckeditor/pictures';
   config.filebrowserImageUploadUrl = '/ckeditor/pictures';
+  config.language = 'en';
+ config.uiColor = '#BCD8E6';
 };
