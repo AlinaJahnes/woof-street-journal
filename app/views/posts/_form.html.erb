@@ -4,7 +4,7 @@
     <%= f.text_field :title %></div>
     <div id="form-category"> <%= f.select :category, options_for_select(["life", "discover","humor", "travel", "good"]), prompt: "Category"%></div>
     <div><%= f.label :body %>
-    <%= f.cktext_area :body, rows: 10, cols: 80, :ckeditor => {:toolbar => 'mini'} %></div>
+    <%= f.cktext_area :body, rows: 50, cols: 80, :ckeditor => {:toolbar => 'mini'} %></div>
     <%= f.submit %>
   <% end %>
 </div>

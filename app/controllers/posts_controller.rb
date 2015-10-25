@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_login, except: [:index, :show]
+  before_action :check_privileges, only: [:edit, :update]
 
   def index
     @category = params[:category]
@@ -42,5 +44,11 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :body, :category).merge(user_id: session[:user_id])
+  end
+
+  def check_privileges
+    unless current_user.id == Post.find_by(id: params[:id]).user_id
+     redirect_to root_path, notice: "not authorized!"
+    end
   end
 end
