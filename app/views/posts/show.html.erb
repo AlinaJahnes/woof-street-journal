@@ -4,10 +4,17 @@
 
     <h3 class="text-center"><%= @post.title %></h3>
     <p class="text-center"><%= link_to @post.user.name, user_path(@post.user)%></p>
+    
+    <div class="row">
+      <div class="large-16 large-offset-1 columns"><%= @post.body.html_safe%></div>
+      <div class="large-1 columns"></div>
+    </div>
+    
+    <div class="row">
+      <div class="large-16 large-offset-1 columns fb-comments" data-numposts="5" data-width="100%"></div>
+      <div class="large-1 coulumns"></div>
+    </div>
 
-    <p><%= @post.body.html_safe%></p>
-
-    <div class="large-16 large-offset-1 columns fb-comments" data-numposts="5" data-width="100%"></div>
   </div>
   <div class="large-4 columns"></div>
   <div class="large-1 columns"></div>
