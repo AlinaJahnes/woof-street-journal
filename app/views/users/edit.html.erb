@@ -1,6 +1,10 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.file_field :avatar %>
-  <%= f.submit "Edit" %>
-<% end %>
+<div class="row">
+  <div class="large-10 large-offset-4 columns user-edit">
+  <%= form_for @user, html: { multipart: true } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.file_field :avatar %>
+    <%= f.submit "Edit" %>
+  <% end %>
+  </div>
+</div>
