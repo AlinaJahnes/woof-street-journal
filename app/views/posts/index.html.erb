@@ -18,12 +18,14 @@
       <% @posts.each do |post|%>
           <div class="large-9 small-18 columns post-container">
             <div class="text-center"><%= link_to post.title, post_path(post)%></div>
-            <div class="large-10 large-offset-1 small-18 columns post-body"><%= post.body.truncate(100).html_safe%></div>
-            <div class="large-7 columns">
-              <% if post.first_image %>
-                <<%= raw post.first_image%> />
-              <% end %>
-            </div>
+            <% if post.first_image %>
+              <div class="large-7 small-18 columns post-images">
+                  <<%= raw post.first_image%> />
+              </div>
+              <div class="large-10 large-offset-1 small-18 columns post-body"><%= post.body.truncate(300).html_safe%></div>
+            <% elsif %>
+              <div class="large-16 large-offset-1 small-18 columns post-body"><%= post.body.truncate(300).html_safe%></div>
+            <% end %>
           </div>
       <% end %>
     </div>

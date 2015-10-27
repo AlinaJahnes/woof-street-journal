@@ -46,7 +46,7 @@
 .posts {
   margin-top: 3%;
   padding-top: 2%;
-  border-top: 1px solid #D9D9D3;
+  border-top: 1px  #D9D9D3;
 }
 
 .ads {
@@ -54,9 +54,8 @@
 }
 
 .post-container {
-  border: 1px solid black;
+  border: 3px dotted #D9D9D3;
   padding: 1%;
-  margin: 1%;
 }
 
 #form-category {
@@ -70,5 +69,14 @@
 }
 
 .categories {
-  width: 10%;
+  width: 8%;
+  color: white;
+}
+
+.post-body p {
+  font-size: 0.85em;
+}
+
+.post-images {
+  margin-top: 3%;
 }
