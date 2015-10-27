@@ -2,7 +2,8 @@
   <div class="large-12 large-offset-1 small-16 small-offset-1 columns right-container ">
     <p class="categories"><%= @post.category%></p>
 
-    <h3 class="text-center"><%= @post.title %></h3>
+    <h2 class="text-center"><%= @post.title %></h2>
+    <div class ="large-18 columns text-center"><%= image_tag @post.user.avatar.url(:thumb), id: "author-post-img" %></div>
     <p class="text-center"><%= link_to @post.user.name, user_path(@post.user)%></p>
     
     <div class="row">

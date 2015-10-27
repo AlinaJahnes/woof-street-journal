@@ -14,11 +14,14 @@
 
 <div class="row">
   <div class="large-12 large-offset-1 small-16 small-offset-1 columns right-container">
-      <% @posts.each do |post|%>
        <div class="row">
-          <div class="large-18 small-18 columns post-container"><%= link_to post.title, post_path(post)%></div>
-        </div>
+      <% @posts.each do |post|%>
+          <div class="large-8 large-offset-1 small-18 columns post-container">
+            <div class="text-center"><%= link_to post.title, post_path(post)%></div>
+            <div class="large-16 large-offset-1 small-18 columns"><%= post.body.truncate(100).html_safe%></div>
+          </div>
       <% end %>
+        </div>
   </div>
   <div class="large-4 columns left-container">
     <img src="assets/nexgard-ad.jpg" class="ads">

@@ -36,6 +36,7 @@
   margin-bottom: 6%;
   background-color: #FFFFFF;
   border: 1px solid #D9D9D3;
+  padding: 2%;
 }
 
 .left-container {
@@ -53,10 +54,17 @@
 }
 
 .post-container {
-  border-bottom: 1px solid black;
-  padding: 2%;
+  border: 1px solid black;
+  padding: 1%;
+  margin: 1%;
 }
 
 #form-category {
   width: 15%;
+}
+
+#author-post-img {
+  margin-top: 2%;
+  width: 8%;
+  border-radius: 50%;
 }
