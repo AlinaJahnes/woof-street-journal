@@ -7,23 +7,23 @@
   color: #FFFFFF;
 }
 
-#life {
+.life {
   background-color: #00bfa5;
 }
 
-#discover {
+.discover {
   background-color:#b76cc4;
 }
 
-#humor {
+.humor {
   background-color:#eec636;
 }
 
-#travel {
+.travel {
   background-color:#97c230;
 }
 
-#good {
+.good {
   background-color:#ec6767;
 }
 
@@ -67,4 +67,8 @@
   margin-top: 2%;
   width: 8%;
   border-radius: 50%;
+}
+
+.categories {
+  width: 10%;
 }
