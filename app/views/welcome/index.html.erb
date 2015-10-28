@@ -1,1 +1,44 @@
-<h1>All doggy news for you!</h1>
+<div class="row">
+  <div class="large-12 large-offset-1 small-18 columns right-container">
+    <% if @first_post.category == 'life' %>
+      <p class="categories life text-center"><%= @first_post.category%></p>
+    <% elsif @first_post.category == 'discover' %>
+      <p class="categories discover text-center"><%= @first_post.category%></p>
+    <% elsif @first_post.category == 'humor' %>
+      <p class="categories humor text-center"><%= @first_post.category%></p>
+    <% elsif @first_post.category == 'travel' %>
+      <p class="categories travel text-center"><%= @first_post.category%></p>
+    <% elsif @first_post.category == 'good' %>
+      <p class="categories good text-center"><%= @first_post.category%></p>
+    <% end %>
+    <div class="text-center"><<%= raw @first_post.first_image%> /></div>
+    <div class="row">
+      <div class="large-16 large-offset-1 small-18 columns text-center left"><%= link_to @first_post.title, post_path(@first_post)%></div>
+      <div class="large-16 large-offset-1 small-18 columns text-center left"><%= @first_post.body.truncate(350).html_safe %></div>
+    </div>
+  </div>
+
+  <div class="large-4 columns left-container">
+    <div class="row">
+    <div class="large-18 columns"><a href="http://www.subaru.com/pets/index.html"><img class=" ads"src="/assets/subaru_ad.jpg"/></a></div>
+    <div class="large-18 columns"><a href="http://www.sparkpeople.com/"><img class=" ads"src="/assets/dog-treat.jpg"/></a></div>
+    </div>
+  </div>
+  <div class="large-1 columns"></div>
+</div>
+
+<div class="row">
+  <div class="large-16 large-offset-1 columns left">
+    <div class="row">
+      <% @posts.each do |post|%>
+        <div class="large-6 small-18 columns">
+          <div class="text-center"><%= link_to post.title, post_path(post)%></div>
+          <div class="text-center">
+              <<%= raw post.first_image%> />
+          </div>
+          <div><%= post.body.truncate(200).html_safe%></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
