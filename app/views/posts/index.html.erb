@@ -15,23 +15,22 @@
 <div class="row">
   <div class="large-12 large-offset-1 small-16 small-offset-1 columns right-container">
     <div class="row">
-      <% @posts.each do |post|%>
-          <div class="large-9 small-18 columns post-container">
-            <div class="text-center"><%= link_to post.title, post_path(post)%></div>
-            <% if post.first_image %>
-              <div class="large-7 small-18 columns post-images">
-                  <<%= raw post.first_image%> />
-              </div>
-              <div class="large-10 large-offset-1 small-18 columns post-body"><%= post.body.truncate(300).html_safe%></div>
-            <% elsif %>
-              <div class="large-16 large-offset-1 small-18 columns post-body"><%= post.body.truncate(300).html_safe%></div>
-            <% end %>
-          </div>
-      <% end %>
+      <ul class="large-block-grid-3">
+        <% @posts.each do |post|%>
+            <li>
+              <div class="text-center"><%= link_to post.title, post_path(post)%></div>
+              <div><<%= raw post.first_image%> /></div>
+              <div class="post-body"><%= post.body.truncate(180).html_safe%></div>
+            </li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <div class="large-4 columns left-container">
-    <img src="assets/nexgard-ad.jpg" class="ads">
+    <div class="row">
+      <div class="large-18 columns"><a href="http://www.nexgardfordogs.com/Pages/index.aspx"><img src="assets/nexgard-ad.jpg" class="ads"></a></div>
+      <div class="large-18 columns"><a href="http://www.subaru.com/pets/index.html"><img src="assets/subaru_ad_1.jpg" class="ads"></a></div>
+    </div>
   </div>
   <div class="large-1 columns"></div>
 </div>
