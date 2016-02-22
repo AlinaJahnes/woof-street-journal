@@ -26,7 +26,7 @@
             <li>
               <div class="text-center"><%= link_to post.title, post_path(post)%></div>
               <div class="index-post-images"><<%= raw post.first_image%> /></div>
-              <p class="index-categories <%= @first_post.banner_category%> text-center"><%= post.category%></p>
+              <p class="index-categories <%= post.banner_category%> text-center"><%= post.category%></p>
               <div class="post-body"><%= post.body.truncate(180).html_safe%></div>
             </li>
         <% end %>
