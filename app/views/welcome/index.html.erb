@@ -1,17 +1,7 @@
 <div class="row">
   <div class="large-12 large-offset-1 small-18 columns right-container">
     <div class="text-center"><<%= raw @first_post.first_image%> /></div>
-    <% if @first_post.category == 'life' %>
-      <p class="categories life text-center"><%= @first_post.category%></p>
-    <% elsif @first_post.category == 'discover' %>
-      <p class="categories discover text-center"><%= @first_post.category%></p>
-    <% elsif @first_post.category == 'humor' %>
-      <p class="categories humor text-center"><%= @first_post.category%></p>
-    <% elsif @first_post.category == 'travel' %>
-      <p class="categories travel text-center"><%= @first_post.category%></p>
-    <% elsif @first_post.category == 'good' %>
-      <p class="categories good text-center"><%= @first_post.category%></p>
-    <% end %>
+    <p class="categories <%= @first_post.banner_category%> text-center"><%= @first_post.category%></p>
     <div class="row">
       <div class="large-16 large-offset-1 small-18 columns text-center left"><h3 class="big-post-title"><%= link_to @first_post.title, post_path(@first_post) %></h3></div>
       <div class="large-16 large-offset-1 small-18 columns text-center left"><%= @first_post.body.truncate(180).html_safe %></div>
@@ -36,17 +26,7 @@
             <li>
               <div class="text-center"><%= link_to post.title, post_path(post)%></div>
               <div class="index-post-images"><<%= raw post.first_image%> /></div>
-              <% if post.category == 'life' %>
-              <p class="index-categories life text-center"><%= post.category%></p>
-            <% elsif post.category == 'discover' %>
-              <p class="index-categories discover text-center"><%= post.category%></p>
-            <% elsif post.category == 'humor' %>
-              <p class="index-categories humor text-center"><%= post.category%></p>
-            <% elsif post.category == 'travel' %>
-              <p class="index-categories travel text-center"><%= post.category%></p>
-            <% elsif post.category == 'good' %>
-              <p class="index-categories good text-center"><%= post.category%></p>
-            <% end %>
+              <p class="index-categories <%= @first_post.banner_category%> text-center"><%= post.category%></p>
               <div class="post-body"><%= post.body.truncate(180).html_safe%></div>
             </li>
         <% end %>
