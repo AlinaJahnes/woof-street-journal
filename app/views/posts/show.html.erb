@@ -6,10 +6,10 @@
     <div class ="large-18 columns text-center"><%= image_tag @post.user.avatar.url(:thumb), id: "author-post-img" %></div>
     <p class="text-center"><%= link_to @post.user.name, user_path(@post.user)%></p>
     
-    <div>
-      <div class="fb-share-button" data-href=<%= request.original_url%> data-layout="button_count"></div>
-      <div><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out">Tweet</a><div>
-    </div>
+    
+    <div class="fb-share-button share-buttons" data-href=<%= request.original_url%> data-layout="button_count"></div>
+    <div class="share-buttons" id="twitter-button"><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out">Tweet</a></div>
+  
 
     <div class="row">
       <div class="large-16 large-offset-1 columns"><%= @post.body.html_safe%></div>
