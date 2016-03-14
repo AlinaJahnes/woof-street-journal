@@ -18,8 +18,9 @@
         </li>
         <li><%= link_to "Logout", logout_path %></li>
       <% else %>
-        <li><a href="#" id="login-link" data-reveal-id="login-form">Login</a></li>
-        <%= render partial: 'sessions/new'%>
+        <li><a href="#" id="login-link" data-reveal-id="login-form">Login</a>
+          <%= render partial: 'sessions/new'%>
+        </li>
       <% end %>       
     </ul>
 
